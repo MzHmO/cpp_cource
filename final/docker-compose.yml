@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web-server:
+    build: .
+    container_name: final_server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./www:/home/box/final/www
+      - ./logs:/home/box/final/logs
+    working_dir: /home/box/final
+    command: /home/box/final/final -h 0.0.0.0 -p 8080 -d www

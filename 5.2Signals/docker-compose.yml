@@ -1,0 +1,8 @@
+services:
+  signal-task:
+    build: .
+    container_name: signal_container
+    volumes:
+      - ./pid_file:/home/box/pid
+    tty: true
+    stdin_open: true

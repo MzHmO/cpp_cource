@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y gcc
+
+WORKDIR /home/box
+
+COPY . .
+
+RUN gcc -o immune_process immune_process.c
+
+CMD ["./immune_process"]
